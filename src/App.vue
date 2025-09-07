@@ -5,6 +5,8 @@ import Alert from "@/components/Alerts/AlertComponent.vue";
 import useToastComposable from "@/composables/useToastComposable.ts";
 import useAlertComposable from "@/composables/useAlertComposable.ts";
 import { computed } from "vue";
+import type { AlertType } from "./types/alert";
+import type { ToastPosition, ToastType } from "./types/toast";
 
 const { currentRoute } = useRouter();
 
@@ -25,7 +27,9 @@ const $alertComposable = useAlertComposable();
         v-for="alert in $alertComposable.$itemList.value"
         :key="alert.id"
       >
-        <Alert :id="alert.id" :type="alert.type">{{ alert.message }}</Alert>
+        <Alert :id="alert.id" :type="alert.type as AlertType">
+          {{ alert.message }}
+        </Alert>
       </template>
     </div>
 
@@ -34,9 +38,12 @@ const $alertComposable = useAlertComposable();
         v-for="toast in $toastComposable.$itemList.value"
         :key="toast.id"
       >
-        <Toast :id="toast.id" :type="toast.type" :position="toast.position">{{
-          toast.message
-        }}</Toast>
+        <Toast
+          :id="toast.id"
+          :type="toast.type as ToastType"
+          :position="toast.position as ToastPosition"
+          >{{ toast.message }}</Toast
+        >
       </template>
     </div>
 

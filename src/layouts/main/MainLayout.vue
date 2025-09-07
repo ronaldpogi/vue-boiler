@@ -107,15 +107,15 @@ onMounted(() => {
       <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
           <li>
-            <a
+            <router-link
               v-for="x in sideNav"
               :key="x.id"
-              href="#"
+              :to="x.path"
               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <i :class="x.icon"></i>
               <span class="ms-3">{{ x.name }}</span>
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>

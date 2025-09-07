@@ -28,4 +28,20 @@ const $handleError = (error: object) => {
   };
 };
 
-export { $handleErrorMessage, $handleError, $generateUUID, $generateRandomID };
+const $slugify = (text: string) => {
+  return text
+    .toString() // convert to string
+    .toLowerCase() // lowercase
+    .trim() // remove leading/trailing spaces
+    .replace(/\s+/g, "-") // replace spaces with -
+    .replace(/[^\w-]+/g, "") // remove all non-word chars
+    .replace(/--+/g, "-"); // collapse multiple dashes
+};
+
+export {
+  $handleErrorMessage,
+  $handleError,
+  $generateUUID,
+  $generateRandomID,
+  $slugify,
+};

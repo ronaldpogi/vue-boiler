@@ -5,7 +5,7 @@ import { initFlowbite } from "flowbite";
 
 import useAlertComposable from "@/composables/useAlertComposable.ts";
 import { useUserStore } from "@/stores/UserStore";
-import { $performLogin } from "@/views/Login/functions.ts";
+import { $performLogin } from "@/views/Login/actions.ts";
 
 import ButtonWithLoader from "@/components/Buttons/ButtonWithLoader.vue";
 import { $generateRandomID } from "@/helpers/helpers.ts";

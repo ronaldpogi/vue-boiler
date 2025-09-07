@@ -4,7 +4,7 @@ import type { AlertPayload } from "@/types/alert.d.ts";
 const $timers: { [key: string]: ReturnType<typeof setTimeout> } = {};
 const $itemList = ref<AlertPayload[]>([]);
 const $duration = 25000;
-export default function useToastComposable() {
+export default function useAlertComposable() {
   const $create = (payload: AlertPayload) => {
     $itemList.value.push({
       id: payload.id,
