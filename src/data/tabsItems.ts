@@ -1,3 +1,4 @@
+import { $slugify } from "@/helpers/helpers";
 import type { Tab } from "@/types/tab";
 
 const tabItems: Tab[] = [
@@ -13,5 +14,8 @@ const tabItems: Tab[] = [
     id: "3",
     name: "Other",
   },
-];
+].map((item) => ({
+  ...item,
+  slug: $slugify(item.name),
+}));
 export { tabItems };

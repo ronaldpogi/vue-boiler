@@ -1,7 +1,7 @@
 interface SideNav {
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   path: string;
   icon: string;
 }
@@ -9,7 +9,7 @@ interface SideNav {
 interface HeadNav {
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   path: string;
   icon: string;
 }

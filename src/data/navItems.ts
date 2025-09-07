@@ -5,14 +5,12 @@ const sideNav: SideNav[] = [
   {
     id: "1",
     name: "Dashboard",
-    slug: null,
     path: "/",
     icon: "fa-solid fa-chart-pie",
   },
   {
     id: "2",
     name: "Users",
-    slug: null,
     path: "/users",
     icon: "fa-solid fa-users",
   },
@@ -25,7 +23,6 @@ const headNav: HeadNav[] = [
   {
     id: "1",
     name: "Dashboard",
-    slug: null,
     path: "/",
     icon: "",
   },
