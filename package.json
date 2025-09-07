@@ -9,7 +9,8 @@
         "preview": "vite preview",
         "build-only": "vite build",
         "type-check": "vue-tsc --build",
-        "eslint": "eslint . --ext .js,.jsx"
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.1.4",
@@ -29,6 +30,8 @@
         "@types/node": "^22.14.0",
         "@vitejs/plugin-vue": "^5.2.4",
         "@vue/tsconfig": "^0.7.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.4",
         "npm-run-all2": "^7.0.2",
         "typescript": "~5.8.0",
         "vite": "^6.3.5",

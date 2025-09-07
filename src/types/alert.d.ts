@@ -1,7 +1,9 @@
 interface AlertPayload {
-    id: string,
-    type: string,
-    message: string
+  id: string;
+  type: string;
+  message: string;
 }
 
-export {AlertPayload}
+type AlertType = "primary" | "secondary" | "success" | "warning" | "danger";
+
+export { AlertPayload, AlertType };
