@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import UserForm from "./UserForm.vue";
+import { computed, ref } from "vue";
 import UserTabs from "./UserTabs.vue";
-import { ref } from "vue";
+import { $showThisTab } from "./functions";
 
-// This is the real "currentTab" state (source of truth)
-const currentTab = ref(1);
+const currentTab = ref<string>("list");
+
+// dynamically resolve component by calling the function
+const currentComponent = computed(() => $showThisTab(currentTab.value));
 </script>
 
 <template>
@@ -13,11 +15,13 @@ const currentTab = ref(1);
       <h1 class="text-2xl font-bold">USERS</h1>
     </div>
 
-    <!-- UserTabs just updates this currentTab -->
-    <UserTabs v-model="currentTab" />
-    {{ currentTab }}
+    <div>
+      <UserTabs v-model="currentTab" />
+    </div>
 
-    <!-- And UserForm can read the same currentTab -->
-    <UserForm :active-tab="currentTab" />
+    <div>
+      <!-- Dynamically render component -->
+      <component :is="currentComponent" :active-tab="currentTab" />
+    </div>
   </div>
 </template>

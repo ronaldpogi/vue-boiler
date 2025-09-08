@@ -12,7 +12,7 @@ const emit = defineEmits<{
   (e: "update:active", id: string | number): void;
 }>();
 
-const activeTab = ref(props.initialActive ?? props.tabs[0]?.id);
+const activeTab = ref(props.initialActive ?? props.tabs[0]?.slug);
 
 const { selectTab } = useTabs(activeTab, emit);
 </script>
@@ -25,10 +25,10 @@ const { selectTab } = useTabs(activeTab, emit);
       <li v-for="tab in props.tabs" :key="tab.id" class="me-2">
         <a
           href="#"
-          @click.prevent="selectTab(tab.id)"
+          @click.prevent="selectTab(tab.slug)"
           :class="[
             'inline-block p-4 border-b-2 rounded-t-lg',
-            activeTab === tab.id
+            activeTab === tab.slug
               ? 'border-blue-500 text-blue-600 dark:text-blue-500'
               : 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300',
           ]"
